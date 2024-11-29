@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+  int base, height, hyp;
+
+  printf("please, insert the the triangle as asked");
+  printf("\nplease, insert the base value\n");
+
+  printf("\nbase\n");
+  scanf("%d", & base);
+  printf("\nheight\n");
+  scanf("%d", & height);
+  printf("\nhyp\n");
+  scanf("%d", & hyp);
+
+  //check if its a valid triangle
+  if ((((base + height) > hyp) && (base - height < hyp) ||
+      ((height + hyp) > base) && (height - hyp < hyp) ||
+      ((hyp + base) > height) && (hyp - base < height)))
+    &&
+    ((base > 0), (height > 0), (hyp > 0)) {
+
+      //check if all sides are different
+      if ((((base != height) && (height != hyp)) && (base != hyp))) {
+        printf("scalene triangle\n");
+      }
+
+      //check one sides are different
+      if (((base == height) != hyp) && ((base, height) != hyp) ||
+        ((hyp == base) != height) && ((hyp, base) != height) ||
+        ((hyp == height) != base) && ((hyp, height) != base))
+
+      {
+        printf("isoceles triangle\n");
+      }
+
+      //check if all sides are equal
+      if (((base == height) && (height == hyp))) {
+        printf("equilateral triangle\n");
+      }
+    }
+  else {
+    printf("invalid input!\n");
+  }
+
+  return (0);
+}
